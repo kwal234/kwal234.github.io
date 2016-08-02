@@ -1,0 +1,355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head><meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>index</title>
+<link rel="stylesheet"href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script></head>
+<body><table style="text-align: left; background-color: white; width: 80%;" border="0" cellpadding="2" cellspacing="2"><tbody><tr><td><table style="text-align: left; background-color: white; height: 131px; width: 926px;" border="0" cellpadding="2" cellspacing="2"><tbody><tr><td style="color: rgb(0, 0, 82); background-color: white; width: 70%;"><div style="text-align: left;"><big><big style="font-family: Arial;"><big><big><big><big>GEOG 771</big></big></big></big><br></big></big></div><div style="text-align: left;"><big style="font-family: Arial;"><big><big><small><big><small>Kate Walker</small></big></small></big></big></big><br></div><span style="font-family: Arial;">University of Auckland<br>Semester 2 | 2016<br></span></td><td style="width: 75%; text-align: center; vertical-align: middle;"><img style="width: 300px; height: 147px;" alt="world map" src="Photos/world-map-1451634-638x312.jpg"><br></td></tr></tbody></table>&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; <br><table style="text-align: left; width: 926px; height: 700px;" border="0" cellpadding="2" cellspacing="2"><tbody><tr><td style="width: 20%; text-align: center; vertical-align: top;"><table style="text-align: left; width: 181px; height: 205px;" border="0" cellpadding="2" cellspacing="2"><tbody><tr style="font-family: Arial; color: white;" align="center"><td style="height: 20%; width: 20%; background-color: rgb(0, 0, 93);">Home</td></tr><tr style="font-family: Arial; color: white;" align="center"><td style="height: 20%; width: 20%; background-color: rgb(0, 0, 93);">Lab 2</td></tr><tr style="font-family: Arial; color: white;" align="center"><td style="height: 20%; width: 20%; background-color: rgb(0, 0, 93);">Lab 3</td></tr><tr style="font-family: Arial; color: white;" align="center"><td style="height: 20%; width: 20%; background-color: rgb(0, 0, 93);">Lab 4</td></tr><tr style="font-family: Arial; color: white;" align="center"><td style="height: 20%; width: 20%; background-color: rgb(0, 0, 93);">Lab 5</td></tr></tbody></table><br></td><td style="width: 80%; vertical-align: top;"><table style="width: 100%; text-align: left; margin-left: auto; margin-right: auto;" border="0" cellpadding="2" cellspacing="2"><tbody><tr><td><span style="font-family: Arial;">Hi my name is Kate Walker and this is
+where you can find my outputs for GEOG 771 2016. Below is my first
+output which is a basic map of the Auckland Domain which I made using
+Leaflet.</span></td></tr></tbody></table><table style="text-align: left; width: 725px; height: 439px;" border="0" cellpadding="2" cellspacing="2"><tbody><tr><td style="text-align: center; vertical-align: top;"><div id="mymap" style="width: 600px; height: 400px"></div>
+
+	
+	<script>
+
+		var mymap = L.map('mymap').setView([-36.848461, 174.763336], 13);
+
+		L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
+			maxZoom: 18,
+			attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+		}).addTo(mymap);
+
+
+		
+		var Domain = { 
+		"type": "Feature",
+		"properties": {
+		  "name": "Domain"
+		},
+	    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.7750966808931,
+              -36.85378982332477,
+              0
+            ],
+            [
+              174.7746875580364,
+              -36.8537083464345,
+              0
+            ],
+            [
+              174.7745038473028,
+              -36.85380742584008,
+              0
+            ],
+            [
+              174.7740651043501,
+              -36.85392383946736,
+              0
+            ],
+            [
+              174.7738535818151,
+              -36.85413642660012,
+              0
+            ],
+            [
+              174.7720785740968,
+              -36.8545327875283,
+              0
+            ],
+            [
+              174.7717289383919,
+              -36.85491709088659,
+              0
+            ],
+            [
+              174.7712787769859,
+              -36.85537704637629,
+              0
+            ],
+            [
+              174.7709326861423,
+              -36.85576439471994,
+              0
+            ],
+            [
+              174.7705910441489,
+              -36.85632250967957,
+              0
+            ],
+            [
+              174.7706015028033,
+              -36.85683513531853,
+              0
+            ],
+            [
+              174.770282748855,
+              -36.85729580756873,
+              0
+            ],
+            [
+              174.7701645436442,
+              -36.85766522351442,
+              0
+            ],
+            [
+              174.7701521441881,
+              -36.85773013943775,
+              0
+            ],
+            [
+              174.7700529985052,
+              -36.85803259379301,
+              0
+            ],
+            [
+              174.7700852675386,
+              -36.85809620647153,
+              0
+            ],
+            [
+              174.7704331503851,
+              -36.85826280523997,
+              0
+            ],
+            [
+              174.7707207374824,
+              -36.85827307395569,
+              0
+            ],
+            [
+              174.7709749674918,
+              -36.85834703489051,
+              0
+            ],
+            [
+              174.7714321607173,
+              -36.85831434015768,
+              0
+            ],
+            [
+              174.7715399942559,
+              -36.85793889840084,
+              0
+            ],
+            [
+              174.7717121196814,
+              -36.85774342519876,
+              0
+            ],
+            [
+              174.7721180026571,
+              -36.85767592115165,
+              0
+            ],
+            [
+              174.7724172764451,
+              -36.85770112188497,
+              0
+            ],
+            [
+              174.7724775373948,
+              -36.85770413380779,
+              0
+            ],
+            [
+              174.7728808349513,
+              -36.85787468138266,
+              0
+            ],
+            [
+              174.7731408049201,
+              -36.85846404922828,
+              0
+            ],
+            [
+              174.7731883538504,
+              -36.85871297933914,
+              0
+            ],
+            [
+              174.7728055301571,
+              -36.85892621100251,
+              0
+            ],
+            [
+              174.7723873042094,
+              -36.85897782708903,
+              0
+            ],
+            [
+              174.7719439635421,
+              -36.85912349341252,
+              0
+            ],
+            [
+              174.7717969341396,
+              -36.85956397779628,
+              0
+            ],
+            [
+              174.7711633649794,
+              -36.8612527777679,
+              0
+            ],
+            [
+              174.7705670812737,
+              -36.86209925977241,
+              0
+            ],
+            [
+              174.771339122726,
+              -36.86402201674241,
+              0
+            ],
+            [
+              174.772108655954,
+              -36.86419304758228,
+              0
+            ],
+            [
+              174.7734294447027,
+              -36.8644506298231,
+              0
+            ],
+            [
+              174.7740267547841,
+              -36.86453815269011,
+              0
+            ],
+            [
+              174.7744075432182,
+              -36.86440690516015,
+              0
+            ],
+            [
+              174.7749450303926,
+              -36.86411275326179,
+              0
+            ],
+            [
+              174.7755252729676,
+              -36.86386479780218,
+              0
+            ],
+            [
+              174.7760800620204,
+              -36.86353713577345,
+              0
+            ],
+            [
+              174.7767406127206,
+              -36.86314728922591,
+              0
+            ],
+            [
+              174.7770166756803,
+              -36.86308701206883,
+              0
+            ],
+            [
+              174.7773132360581,
+              -36.86308584270535,
+              0
+            ],
+            [
+              174.7780230905136,
+              -36.86335987603725,
+              0
+            ],
+            [
+              174.7792803590435,
+              -36.86221028666197,
+              0
+            ],
+            [
+              174.7802372210962,
+              -36.86133650304429,
+              0
+            ],
+            [
+              174.7806266856756,
+              -36.86128386868279,
+              0
+            ],
+            [
+              174.7809809163776,
+              -36.86133208176868,
+              0
+            ],
+            [
+              174.7810172495957,
+              -36.86103958732578,
+              0
+            ],
+            [
+              174.7808589617901,
+              -36.86038191767251,
+              0
+            ],
+            [
+              174.7807750108611,
+              -36.86007125684326,
+              0
+            ],
+            [
+              174.7802674566523,
+              -36.86006453208422,
+              0
+            ],
+            [
+              174.7797618040181,
+              -36.85913071157864,
+              0
+            ],
+            [
+              174.7789113677453,
+              -36.85752373371652,
+              0
+            ],
+            [
+              174.7782418860617,
+              -36.85627364619084,
+              0
+            ],
+            [
+              174.7774712562636,
+              -36.8550669508212,
+              0
+            ],
+            [
+              174.7769942802361,
+              -36.85416519121959,
+              0
+            ],
+            [
+              174.7766156312574,
+              -36.85381040929082,
+              0
+            ],
+            [
+              174.7750966808931,
+              -36.85378982332477,
+              0
+            ]
+          ]
+        ]
+		}
+      };
+	
+L.geoJson(Domain, {
+style: function(feature) {
+    switch (feature.properties.name) {
+        case 'Domain': return {color: "#00cc99", fillOpacity: "0.8"};
+    }
+}
+}).addTo(mymap); 
+	L.marker([-36.859125, 174.775205]).addTo(mymap)
+			.bindPopup("<b>Auckland Domain</b><br />.").openPopup();
+
+			
+	</script></td></tr></tbody></table><br></td></tr></tbody></table><br><br><br><br><br><br><br><br><br><br><br><br></td></tr></tbody></table><br></body></html>
