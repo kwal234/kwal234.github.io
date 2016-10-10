@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lab 5 HTML </title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="http://npmcdn.com/leaflet@0.7.7/dist/leaflet.css" />
+	<script src="http://npmcdn.com/leaflet@0.7.7/dist/leaflet.js"></script>
+	<script type="text/javascript" src="twitter.js"></script>
+	<style> 
+
+.legend {
+    line-height: 25px;
+    color: #555;
+}
+.legend i {
+    width: 25px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+</style>
+	
+</head>
+
+<body>
+<div id="mymap" style="width: 700px; height: 800px"></div>
+	
+	
+	
+<script> 
+
+		var mymap = L.map('mymap').setView([-41.049010, 173.151528], 6);
+
+	L.tileLayer('http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a> &copy; <a href="http://twitter.com/mattzook">@mattzook, DOLLY and Floating Sheep</a>',
+	subdomains: 'abcd',
+	maxZoom: 19
+}).addTo(mymap);
+
+	
+		function getColor(d) {
+    return d > 1.1  ? '#F0A40B' :
+           d > 0.9  ? '#A5A1A3' :
+           d > 0.01 ? '#FB4068' :
+           d > 0    ? '#F1E9E9' :
+                     
+                      '#F1E9E9';
+}
+
+		function style(feature) {
+    return {
+        fillColor: getColor(feature.properties.LQ),
+        weight: 1,
+        opacity: 0.3,
+        color: '#141413',
+        dashArray: '1',
+        fillOpacity: 0.8,
+    };
+}
+		L.geoJson(hex, {style: style}).addTo(mymap);
+
+var legend = L.control({position: 'bottomright'});
+		
+legend.onAdd = function (map) {
+
+    var div = L.DomUtil.create('div', 'info legend'),
+        grades = [0, 0.01, 0.9, 1.1, ],
+        key_labels = ["No Tweets", "More All Black Tweets", "Same amount of Tweets", "More Haka Tweets", ],
+        labels = ["<b><big><big>Legend</big></big></b>"],
+        from, to;
+
+    // loop through our density intervals and generate a label with a colored square for each interval
+    for (var i = 0; i < grades.length; i++) {
+    	from = grades[i];
+    	to = grades[i + 1];
+
+    	labels.push(
+    	'<i style="background:' + getColor(to) + '"></i> ' + key_labels[i]); 
+     }   
+       
+        div.innerHTML = labels.join('<br>');
+    	return div;
+};
+
+legend.addTo(mymap);
+	
+</script>
+</body>
+</html>
