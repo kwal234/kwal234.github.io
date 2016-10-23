@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lab 5 HTML </title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="http://npmcdn.com/leaflet@0.7.7/dist/leaflet.css" />
+	<script src="http://npmcdn.com/leaflet@0.7.7/dist/leaflet.js"></script>
+	<script type="text/javascript" src="twitter.js"></script>
+	
+</head>
+
+<body>
+<div id="mymap" style="width: 700px; height: 800px"></div>
+	
+	
+	
+<script> 
+
+		var mymap = L.map('mymap').setView([-41.049010, 173.151528], 6);
+
+	L.tileLayer('http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a> &copy; <a href="http://twitter.com/mattzook">@mattzook, DOLLY and Floating Sheep</a>',
+	subdomains: 'abcd',
+	maxZoom: 19
+}).addTo(mymap);
+
+	
+
+</script>
+</body>
+</html>
